@@ -1,3 +1,15 @@
+export interface SkillCategory {
+  title: string;
+  items: string[];
+}
+
+export interface SkillsSectionData {
+  terminalPath: string;
+  heading: string;
+  intro: string;
+  categories: SkillCategory[];
+}
+
 export interface SkillGroup {
   name: string;
   items: string[];
@@ -75,6 +87,7 @@ export interface PortfolioData {
     factTags?: string[];
     photoUrl?: string;
   };
+  skillsData: SkillsSectionData;
   skills: SkillGroup[];
   projects: Project[];
   achievements: Achievement[];
@@ -161,6 +174,45 @@ export const portfolioData: PortfolioData = {
       "STATUS: OPEN TO WORK",
     ],
     photoUrl: "/profile.jpg",
+  },
+  skillsData: {
+    terminalPath: "~/skills",
+    heading: "Technical Skills",
+    intro:
+      "Technologies and tools I've been learning and working with through coursework and projects.",
+    categories: [
+      {
+        title: "Programming Languages",
+        items: ["C++", "Python", "Java", "SQL"],
+      },
+      {
+        title: "Frontend Development",
+        items: ["HTML", "CSS", "JavaScript", "React", "Tailwind CSS"],
+      },
+      {
+        title: "Backend Development",
+        items: ["Node.js", "Express.js", "REST APIs"],
+      },
+      {
+        title: "Databases",
+        items: ["MongoDB", "MySQL"],
+      },
+      {
+        title: "AI / Machine Learning",
+        items: [
+          "Machine Learning",
+          "Computer Vision",
+          "TensorFlow",
+          "Keras",
+          "OpenCV",
+          "Scikit-learn",
+        ],
+      },
+      {
+        title: "Tools",
+        items: ["Git", "GitHub", "VS Code", "Postman"],
+      },
+    ],
   },
   skills: [
     {

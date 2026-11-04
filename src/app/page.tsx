@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Landing from "@/components/Landing";
 import ArcadeBanner from "@/components/ArcadeBanner";
 import About from "@/components/About";
+import Skills from "@/components/Skills";
 
 export default function Home() {
   return (
@@ -18,12 +19,10 @@ export default function Home() {
         {/* Section 01: About */}
         <About />
 
-        {/* Section anchors for navigation testing and scroll verification */}
-        <section id="skills" className="min-h-[50vh] border-t border-line/40">
-          <h2>What I work with</h2>
-          <p className="lead">Section 02 placeholder — awaiting Phase 3.</p>
-        </section>
+        {/* Section 02: Skills */}
+        <Skills />
 
+        {/* Section anchors for navigation testing and scroll verification */}
         <section id="projects" className="min-h-[50vh] border-t border-line/40">
           <h2>Things I’ve built</h2>
           <p className="lead">Section 03 placeholder — awaiting Phase 3.</p>
