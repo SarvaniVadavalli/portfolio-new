@@ -172,8 +172,8 @@ export default function ArcadeBanner() {
       if (!mat) return;
       const color =
         ch === "Y" || ch === "O" || ch === "U" || ch === "!"
-          ? "#D9B75B"
-          : "#789B83";
+          ? "var(--str)"
+          : "var(--acc)";
 
       mat.forEach((row, r) => {
         row.split("").forEach((pixel, c) => {
@@ -220,13 +220,13 @@ export default function ArcadeBanner() {
               : "Pac-Man arcade strip. Use Left and Right arrow keys to collect dots."
           }
         >
-          {/* Top pair of thin horizontal boundary lines (#263A2F) */}
-          <rect x="0" y="8" width="960" height="2" fill="#263A2F" />
-          <rect x="0" y="14" width="960" height="2" fill="#263A2F" />
+          {/* Top pair of thin horizontal boundary lines */}
+          <rect x="0" y="8" width="960" height="2" fill="var(--line)" />
+          <rect x="0" y="14" width="960" height="2" fill="var(--line)" />
 
-          {/* Bottom pair of thin horizontal boundary lines (#263A2F) */}
-          <rect x="0" y="49" width="960" height="2" fill="#263A2F" />
-          <rect x="0" y="55" width="960" height="2" fill="#263A2F" />
+          {/* Bottom pair of thin horizontal boundary lines */}
+          <rect x="0" y="49" width="960" height="2" fill="var(--line)" />
+          <rect x="0" y="55" width="960" height="2" fill="var(--line)" />
 
           {isWon ? (
             /* Victory screen: replaces characters with blocky pixel-art "YOU WIN!" */
@@ -234,7 +234,7 @@ export default function ArcadeBanner() {
           ) : (
             /* Active gameplay elements */
             <>
-              {/* Collectible yellow square dots (#D9B75B) */}
+              {/* Collectible square dots */}
               <g className="arcade-dots">
                 {INITIAL_DOTS.map((dotX, idx) =>
                   dots[idx] ? (
@@ -244,14 +244,14 @@ export default function ArcadeBanner() {
                       y={29}
                       width={7}
                       height={7}
-                      fill="#D9B75B"
+                      fill="var(--str)"
                       shapeRendering="crispEdges"
                     />
                   ) : null
                 )}
               </g>
 
-              {/* Pac-Man Character (#789B83) with keyboard position & facing */}
+              {/* Pac-Man Character with keyboard position & facing */}
               <g
                 className="arcade-pacman-player"
                 transform={
@@ -264,7 +264,7 @@ export default function ArcadeBanner() {
                   PACMAN_BODY,
                   pacmanX,
                   20.5,
-                  { "#": "#789B83" },
+                  { "#": "var(--acc)" },
                   "pac-body"
                 )}
                 {/* Closed mouth fill while moving */}
@@ -275,7 +275,7 @@ export default function ArcadeBanner() {
                       y={20.5 + 1 * U}
                       width={U}
                       height={U}
-                      fill="#789B83"
+                      fill="var(--acc)"
                       shapeRendering="crispEdges"
                     />
                     <rect
@@ -283,7 +283,7 @@ export default function ArcadeBanner() {
                       y={20.5 + 2 * U}
                       width={3 * U}
                       height={U}
-                      fill="#789B83"
+                      fill="var(--acc)"
                       shapeRendering="crispEdges"
                     />
                     <rect
@@ -291,7 +291,7 @@ export default function ArcadeBanner() {
                       y={20.5 + 3 * U}
                       width={3 * U}
                       height={U}
-                      fill="#789B83"
+                      fill="var(--acc)"
                       shapeRendering="crispEdges"
                     />
                     <rect
@@ -299,14 +299,14 @@ export default function ArcadeBanner() {
                       y={20.5 + 4 * U}
                       width={U}
                       height={U}
-                      fill="#789B83"
+                      fill="var(--acc)"
                       shapeRendering="crispEdges"
                     />
                   </g>
                 )}
               </g>
 
-              {/* Destination Finish Marker (#789B83 / #D9B75B / #263A2F) at far right */}
+              {/* Destination Finish Marker at far right */}
               <g className="arcade-flag-sprite">
                 {FLAG_MATRIX.map((row, r) =>
                   row.split("").map((ch, c) => {
@@ -314,9 +314,9 @@ export default function ArcadeBanner() {
                     const col =
                       r < 4
                         ? (r + c) % 2 === 0
-                          ? "#789B83"
-                          : "#D9B75B"
-                        : "#263A2F";
+                          ? "var(--acc)"
+                          : "var(--str)"
+                        : "var(--line)";
                     return (
                       <rect
                         key={`flag-${r}-${c}`}

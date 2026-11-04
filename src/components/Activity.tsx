@@ -40,11 +40,11 @@ const LEVEL_COLORS_DARK = [
 ];
 
 const LEVEL_COLORS_LIGHT = [
-  "#eaf3ee", // 0
-  "#a2ddbb", // 1
-  "#5ec791", // 2
-  "#28aa68", // 3
-  "#0b8f63", // 4
+  "#D4E2D7", // 0
+  "#9ECCB0", // 1
+  "#5EB585", // 2
+  "#319B67", // 3
+  "#168B65", // 4
 ];
 
 export default function Activity() {
