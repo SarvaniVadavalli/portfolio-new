@@ -78,6 +78,16 @@ export interface ActivitySectionData {
   };
 }
 
+export interface ContactSectionData {
+  terminalPath: string;
+  heading: string;
+  subtitle: string;
+  email: string;
+  github: string;
+  linkedin: string;
+  ctaText: string;
+}
+
 export interface PortfolioData {
   name: string;
   shortName: string;
@@ -136,6 +146,7 @@ export interface PortfolioData {
   projectsData: ProjectsSectionData;
   projects: Project[];
   activityData: ActivitySectionData;
+  contactData: ContactSectionData;
   achievements: Achievement[];
   statsSnapshot: {
     github: {
@@ -176,11 +187,11 @@ export const portfolioData: PortfolioData = {
     lookingFor: "An internship",
   },
   contact: {
-    email: "sarvanikutti@gmail.com",
+    email: "sarvani.vadavalli@gmail.com",
     phone: "+91 9121352364",
     github: "https://github.com/SarvaniVadavalli",
     githubHandle: "@SarvaniVadavalli",
-    linkedin: "https://www.linkedin.com/in/sarvani-vadavalli",
+    linkedin: "https://www.linkedin.com/in/sarvani-vadavalli-94a501324/",
     leetcode: "https://leetcode.com/u/Sarvani_Vadavalli/",
     leetcodeHandle: "@Sarvani_Vadavalli",
     resumeUrl: "/resume.pdf",
@@ -437,6 +448,16 @@ export const portfolioData: PortfolioData = {
       terminalPath: "~/activity/leetcode",
       label: "LEETCODE_ACTIVITY()",
     },
+  },
+  contactData: {
+    terminalPath: "~/contact",
+    heading: "LET'S BUILD SOMETHING TOGETHER",
+    subtitle:
+      "I'm always open to connecting with people, discussing ideas, exploring opportunities and learning from others. Feel free to reach out!",
+    email: "sarvani.vadavalli@gmail.com",
+    github: "https://github.com/SarvaniVadavalli",
+    linkedin: "https://www.linkedin.com/in/sarvani-vadavalli-94a501324/",
+    ctaText: "[ SEND ME AN EMAIL ↗ ]",
   },
   statsSnapshot: {
     github: {

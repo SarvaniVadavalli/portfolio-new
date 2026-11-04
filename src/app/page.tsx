@@ -6,6 +6,7 @@ import About from "@/components/About";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import Activity from "@/components/Activity";
+import Contact from "@/components/Contact";
 
 export default function Home() {
   return (
@@ -30,10 +31,8 @@ export default function Home() {
         {/* Section 04: Developer Activity (GitHub & LeetCode) */}
         <Activity />
 
-        <section id="contact" className="min-h-[50vh] border-t border-line/40">
-          <h2>Let’s talk</h2>
-          <p className="lead">Section 05 placeholder — awaiting Phase 5.</p>
-        </section>
+        {/* Section 05: Contact & Footer */}
+        <Contact />
       </main>
     </>
   );
