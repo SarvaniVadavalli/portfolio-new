@@ -1,3 +1,29 @@
+export interface ProjectTerminalLine {
+  prompt: string;
+  text: string;
+  isCommand?: boolean;
+}
+
+export interface ProjectItem {
+  number: string;
+  title: string;
+  category: string;
+  filePath: string;
+  description: string;
+  terminalOutput?: ProjectTerminalLine[];
+  stack: string[];
+  repo?: string;
+  link?: string;
+  isFeatured?: boolean;
+}
+
+export interface ProjectsSectionData {
+  terminalPath: string;
+  heading: string;
+  subtitle: string;
+  projects: ProjectItem[];
+}
+
 export interface SkillCategory {
   title: string;
   items: string[];
@@ -89,6 +115,7 @@ export interface PortfolioData {
   };
   skillsData: SkillsSectionData;
   skills: SkillGroup[];
+  projectsData: ProjectsSectionData;
   projects: Project[];
   achievements: Achievement[];
   statsSnapshot: {
@@ -262,6 +289,58 @@ export const portfolioData: PortfolioData = {
       ],
     },
   ],
+  projectsData: {
+    terminalPath: "~/projects",
+    heading: "Selected Projects",
+    subtitle:
+      "A collection of projects where I've applied what I've learned and explored new technologies.",
+    projects: [
+      {
+        number: "01",
+        title: "UniMeet",
+        category: "Full-Stack Application",
+        filePath: "~/projects/unimeet",
+        description:
+          "A faculty appointment management platform that allows students to explore faculty profiles, check available time slots and book appointments.",
+        terminalOutput: [
+          { prompt: "$", text: "npm run dev", isCommand: true },
+          { prompt: ">", text: "Starting UniMeet..." },
+          { prompt: ">", text: "Appointment system ready." },
+        ],
+        stack: ["React", "Node.js", "Express.js", "MongoDB", "JWT"],
+        repo: "https://github.com/SarvaniVadavalli/UniMeet",
+      },
+      {
+        number: "02",
+        title: "DeepFake Detection System",
+        category: "Deep Learning & Vision",
+        filePath: "~/projects/deepfake",
+        description:
+          "An image classification system that uses deep learning and computer vision techniques to identify potentially manipulated images.",
+        terminalOutput: [
+          { prompt: "$", text: "python detect.py", isCommand: true },
+          { prompt: ">", text: "Loading detection model..." },
+          { prompt: ">", text: "Image analysis initialized." },
+        ],
+        stack: ["Python", "TensorFlow", "Keras", "OpenCV", "CNN"],
+        repo: "https://github.com/SarvaniVadavalli/Deep-Fake-Project",
+      },
+      {
+        number: "03",
+        title: "Hospital Management System",
+        category: "Database System",
+        filePath: "~/projects/hospital-db",
+        description:
+          "A database-driven application designed to manage hospital information and related records.",
+        terminalOutput: [
+          { prompt: ">", text: "SELECT * FROM patients;", isCommand: true },
+          { prompt: ">", text: "Query prepared successfully." },
+        ],
+        stack: ["MySQL", "SQL"],
+        repo: "https://github.com/SarvaniVadavalli/DBMS-Hospital-Management",
+      },
+    ],
+  },
   projects: [
     {
       title: "UniMeet",
@@ -279,8 +358,8 @@ export const portfolioData: PortfolioData = {
       ],
       tags: ["Full-Stack", "Management"],
       link: "#",
-      repo: "#",
-      isPlaceholderLink: true,
+      repo: "https://github.com/SarvaniVadavalli/UniMeet",
+      isPlaceholderLink: false,
     },
     {
       title: "DeepFake Detection System",
@@ -290,8 +369,8 @@ export const portfolioData: PortfolioData = {
       stack: ["Python", "TensorFlow/Keras", "OpenCV"],
       tags: ["AI/ML", "Vision"],
       link: "#",
-      repo: "#",
-      isPlaceholderLink: true,
+      repo: "https://github.com/SarvaniVadavalli/Deep-Fake-Project",
+      isPlaceholderLink: false,
     },
     {
       title: "Hospital Management System",
@@ -301,8 +380,8 @@ export const portfolioData: PortfolioData = {
       stack: ["MySQL"],
       tags: ["Database", "SQL"],
       link: "#",
-      repo: "#",
-      isPlaceholderLink: true,
+      repo: "https://github.com/SarvaniVadavalli/DBMS-Hospital-Management",
+      isPlaceholderLink: false,
     },
   ],
   achievements: [
