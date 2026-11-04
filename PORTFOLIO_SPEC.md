@@ -97,11 +97,9 @@ const sarvani = {
 - Buttons: "Resume →" (primary green fill `--acc`, opens /resume.pdf in new tab) and "See my projects" (secondary outlined card, scrolls to #projects). Fade up at 1.6s. Monospace typography, 8px radius.
 - Scroll cue bottom-left: a 1px accent line animating `scaleY` plus mono label "scroll to enter".
 - Scroll-linked exit: `p = min(scrollY / innerHeight, 1)`. Landing gets `translateY(-40px * p)`, `scale(1 - 0.05 * p)`, `opacity(1 - 1.1 * p)`. Throttle with requestAnimationFrame and a passive listener.
-- Scroll cue bottom-left: a 1px accent line animating `scaleY` plus mono label "scroll to enter".
-- Scroll-linked exit: `p = min(scrollY / innerHeight, 1)`. Landing gets `translateY(-40px * p)`, `scale(1 - 0.05 * p)`, `opacity(1 - 1.1 * p)`. Throttle with requestAnimationFrame and a passive listener.
 
 ### 4.3 About (`01 /`)
-Two columns: 200px photo, then text (gap 34px); stacks on mobile. Photo: square, 2px `--b` border, radius 18, shadow `6px 6px 0 var(--soft)`, `object-fit: cover`. Placeholder is an "S" in mono accent until a real photo is added at `public/profile.jpg`. Text: a short, human paragraph (placeholder in the data file) plus fact tags in mono 13px with dashed `--line` borders: Student, Software engineering, AI/ML, Open to internships.
+Compact top padding (`clamp(18px, 3vh, 32px)`, `scroll-margin-top: 70px`). Two columns: 200px photo on the left, then text on the right (gap 34px); stacks on mobile. Photo: square, 2px `--b` border, radius 18, shadow `6px 6px 0 var(--soft)`, `object-fit: cover`. Placeholder is an "S" in mono accent until a real photo is added at `public/profile.jpg`. Text: three personal paragraphs (stored in `portfolioData.about.paragraphs`) plus fact tags in mono 13px with dashed `--line` borders: "Student", "Software Engineering", "AI / ML", "Open to Internships". Reveal on scroll (15% visible threshold, 0.8s `cubic-bezier(.2,.8,.2,1)`).
 
 ### 4.4 Skills (`02 /`)
 Grouped boxes (grid, `auto-fit, minmax(270px, 1fr)`, gap 18). Each box: header row in mono 13px with a small accent square icon (14px, radius 3, shadow `3px 3px 0 var(--soft)`) and a lowercase label on the left, and "N items" in `--dim` on the right. Below: chips in mono 14px, padding 5px 12px, `--bg` background, 1px `--line` border with a 3px bottom border, radius 7. Chip hover: accent border and text, lift -2px. Optional later: pixel-art icons per group (the owner shared a reference with pixel icons).

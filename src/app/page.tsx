@@ -1,6 +1,8 @@
 import Background from "@/components/Background";
 import Header from "@/components/Header";
 import Landing from "@/components/Landing";
+import ArcadeBanner from "@/components/ArcadeBanner";
+import About from "@/components/About";
 
 export default function Home() {
   return (
@@ -10,12 +12,13 @@ export default function Home() {
       <main>
         <Landing />
 
-        {/* Section anchors for Phase 2 navigation testing and scroll verification */}
-        <section id="about" className="min-h-[50vh] border-t border-line/40">
-          <h2>About me</h2>
-          <p className="lead">Section 01 placeholder — awaiting Phase 3.</p>
-        </section>
+        {/* Pac-Man Arcade Strip */}
+        <ArcadeBanner />
 
+        {/* Section 01: About */}
+        <About />
+
+        {/* Section anchors for navigation testing and scroll verification */}
         <section id="skills" className="min-h-[50vh] border-t border-line/40">
           <h2>What I work with</h2>
           <p className="lead">Section 02 placeholder — awaiting Phase 3.</p>

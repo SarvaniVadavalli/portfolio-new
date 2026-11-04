@@ -186,11 +186,6 @@ export default function Landing() {
           </div>
         </div>
       </div>
-
-      <div className="cue">
-        <i></i>
-        scroll to enter
-      </div>
     </section>
   );
 }

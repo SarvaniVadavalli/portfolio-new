@@ -63,9 +63,17 @@ export interface PortfolioData {
     };
   };
   about: {
+    terminalPath: string;
+    heading: string;
     paragraphs: string[];
-    factTags: string[];
-    photoUrl: string;
+    profileTags: string[];
+    photo: {
+      url: string;
+      filename: string;
+      size: string;
+    };
+    factTags?: string[];
+    photoUrl?: string;
   };
   skills: SkillGroup[];
   projects: Project[];
@@ -130,19 +138,29 @@ export const portfolioData: PortfolioData = {
     },
   },
   about: {
+    terminalPath: "~/about",
+    heading: "About me",
     paragraphs: [
-      "I'm Sarvani — a developer driven by curiosity, experimentation, and the excitement of turning ideas into something real.",
-      "Currently pursuing Computer Science with a specialization in AI & ML, I enjoy exploring different dimensions of technology — from crafting full-stack applications and designing reliable systems to experimenting with machine learning and computer vision.",
-      "I don't like limiting myself to just one area of development. I enjoy understanding how things work, exploring unfamiliar technologies, and bringing different concepts together to build useful experiences.",
-      "I'm always learning, building, breaking things, and finding better ways to solve problems. My goal is to grow into an engineer who doesn't just write code, but creates things that make a difference.",
+      "I'm Sarvani, a Computer Science student who enjoys learning by building and experimenting.",
+      "I'm exploring software development and AI/ML, turning what I learn into projects and practical experiences. I like understanding how things work, trying unfamiliar technologies, and finding creative ways to solve problems.",
+      "I'm still discovering the areas I want to grow in, and I'm excited to keep learning, building, and seeing where that journey takes me.",
     ],
+    profileTags: [
+      "FOCUS: AI / ML",
+      "DEGREE: B.TECH CSE",
+      "STATUS: OPEN TO WORK",
+    ],
+    photo: {
+      url: "/profile.jpg",
+      filename: "profile.jpg",
+      size: "118 KB",
+    },
     factTags: [
-      "Student",
-      "Software engineering",
-      "AI/ML",
-      "Open to internships",
+      "FOCUS: AI / ML",
+      "DEGREE: B.TECH CSE",
+      "STATUS: OPEN TO WORK",
     ],
-    photoUrl: "/profile.jpg", // Fallback to 'S' placeholder if missing
+    photoUrl: "/profile.jpg",
   },
   skills: [
     {
