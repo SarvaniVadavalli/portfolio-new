@@ -60,6 +60,24 @@ export interface Achievement {
   credentialId?: string;
 }
 
+export interface ActivitySectionData {
+  terminalPath: string;
+  heading: string;
+  subtitle: string;
+  github: {
+    username: string;
+    profileUrl: string;
+    terminalPath: string;
+    label: string;
+  };
+  leetcode: {
+    username: string;
+    profileUrl: string;
+    terminalPath: string;
+    label: string;
+  };
+}
+
 export interface PortfolioData {
   name: string;
   shortName: string;
@@ -117,6 +135,7 @@ export interface PortfolioData {
   skills: SkillGroup[];
   projectsData: ProjectsSectionData;
   projects: Project[];
+  activityData: ActivitySectionData;
   achievements: Achievement[];
   statsSnapshot: {
     github: {
@@ -401,20 +420,38 @@ export const portfolioData: PortfolioData = {
       description: "Certification in MongoDB database concepts and operations.",
     },
   ],
-  statsSnapshot: {
+  activityData: {
+    terminalPath: "~/activity",
+    heading: "Developer Activity",
+    subtitle:
+      "A glimpse into my coding journey, contributions and problem-solving progress.",
     github: {
-      contributionsLastYear: 620,
-      repos: 24,
-      dayStreak: 18,
-      seed: 7,
+      username: "SarvaniVadavalli",
+      profileUrl: "https://github.com/SarvaniVadavalli",
+      terminalPath: "~/activity/github",
+      label: "GITHUB_ACTIVITY()",
     },
     leetcode: {
-      submissionsLastYear: 310,
-      solved: 150,
+      username: "Sarvani_Vadavalli",
+      profileUrl: "https://leetcode.com/u/Sarvani_Vadavalli/",
+      terminalPath: "~/activity/leetcode",
+      label: "LEETCODE_ACTIVITY()",
+    },
+  },
+  statsSnapshot: {
+    github: {
+      contributionsLastYear: 90,
+      repos: 13,
+      dayStreak: 2,
+      seed: 2026,
+    },
+    leetcode: {
+      submissionsLastYear: 362,
+      solved: 209,
       easy: 90,
-      medium: 52,
-      hard: 8,
-      seed: 11,
+      medium: 110,
+      hard: 9,
+      seed: 2026,
     },
   },
 };

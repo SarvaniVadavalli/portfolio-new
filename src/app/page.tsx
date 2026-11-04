@@ -5,6 +5,7 @@ import ArcadeBanner from "@/components/ArcadeBanner";
 import About from "@/components/About";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
+import Activity from "@/components/Activity";
 
 export default function Home() {
   return (
@@ -26,11 +27,8 @@ export default function Home() {
         {/* Section 03: Projects */}
         <Projects />
 
-        {/* Section anchors for navigation testing and scroll verification */}
-        <section id="stats" className="min-h-[50vh] border-t border-line/40">
-          <h2>GitHub and LeetCode</h2>
-          <p className="lead">Section 04 placeholder — awaiting Phase 4.</p>
-        </section>
+        {/* Section 04: Developer Activity (GitHub & LeetCode) */}
+        <Activity />
 
         <section id="contact" className="min-h-[50vh] border-t border-line/40">
           <h2>Let’s talk</h2>
